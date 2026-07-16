@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "scrollabletooltips",
+  "version": "${version}",
+  "name": "Scrollable Tooltips",
+  "description": "Scroll oversized Minecraft item tooltips with the mouse wheel.",
+  "authors": [
+    "Hypixel-Skyblock-Mods"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/scrollabletips",
+    "sources": "https://github.com/Hypixel-Skyblock-Mods/ScrollableTooltips",
+    "issues": "https://github.com/Hypixel-Skyblock-Mods/ScrollableTooltips/issues"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/scrollabletooltips/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "org.hypixelskyblockmods.scrollabletooltips.ScrollableTooltipsClient"
+      }
+    ]
+  },
+  "mixins": [
+    "scrollabletooltips.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "fabric-language-kotlin": ">=1.13.12+kotlin.2.4.0",
+    "minecraft": "${minecraft_version}",
+    "java": ">=25"
+  }
+}
