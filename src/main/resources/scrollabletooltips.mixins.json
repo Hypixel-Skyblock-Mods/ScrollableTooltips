@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "org.hypixelskyblockmods.scrollabletooltips.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "AbstractContainerScreenAccessor",
+    "GuiGraphicsExtractorMixin",
+    "MouseHandlerMixin",
+    "ScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
