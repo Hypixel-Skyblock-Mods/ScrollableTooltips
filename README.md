@@ -38,8 +38,8 @@ Build every supported Minecraft version:
 Production JARs are written to:
 
 ```text
-versions/mc26_1_2/build/libs/ScrollableTooltips-1.0.1+mc26.1.2.jar
-versions/mc26_2/build/libs/ScrollableTooltips-1.0.1+mc26.2.jar
+versions/mc26_1_2/build/libs/ScrollableTooltips-<mod_version>+mc26.1.2.jar
+versions/mc26_2/build/libs/ScrollableTooltips-<mod_version>+mc26.2.jar
 ```
 
 The implementation is independent. Older tooltip-scrolling mods were consulted
