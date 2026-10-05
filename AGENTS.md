@@ -2,8 +2,8 @@
 
 Scrollable Tooltips is a client-side Kotlin/Fabric mod that lets players scroll
 oversized item tooltips vertically with the mouse wheel. It supports Minecraft
-26.1.2 and 26.2 from shared sources plus version-specific compatibility code
-under `src/26.1.2` and `src/26.2` when the APIs actually differ.
+26.1.2, 26.2, and 26.3 from shared sources plus version-specific compatibility code
+under `src/26.1.2`, `src/26.2`, and `src/26.3` when the APIs actually differ.
 
 ## Multi-version architecture
 
@@ -75,9 +75,7 @@ under `src/26.1.2` and `src/26.2` when the APIs actually differ.
 - Only pushed `v*` tags invoke `.github/workflows/release.yml`. The tag must
   exactly equal `v<mod_version>`; normal pushes and pull requests do not build or
   publish anything in GitHub Actions.
-- The release job runs on labels `self-hosted`, `Linux`, `X64`,
-  `wicked-game-01`, and `scrollabletooltips`. Two ephemeral containers in the
-  existing `/srv/runners` stack provide the repository-scoped pool.
+- The release job runs on GitHub-hosted `ubuntu-latest` with Java 25.
 - The workflow generates the target list with `./gradlew releaseManifest`,
   builds all targets, skips existing Modrinth versions, publishes each missing
   target, and creates or updates one GitHub Release with all production JARs.

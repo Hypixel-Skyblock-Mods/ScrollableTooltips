@@ -78,6 +78,7 @@ subprojects {
         add("implementation", "net.fabricmc:fabric-language-kotlin:1.13.12+kotlin.2.4.0")
         add("testImplementation", "org.junit.jupiter:junit-jupiter:5.12.2")
         add("testRuntimeOnly", "org.junit.platform:junit-platform-launcher:1.12.2")
+        add("testImplementation", "org.ow2.asm:asm-tree:9.9" )
     }
 
     extensions.configure<org.gradle.api.plugins.JavaPluginExtension> {
@@ -103,6 +104,9 @@ subprojects {
         named("main") {
             java.setSrcDirs(emptyList<String>())
             resources.setSrcDirs(listOf(rootProject.file("src/main/resources")))
+        }
+        named("test") {
+            java.srcDir(rootProject.file("src/test/java"))
         }
     }
 

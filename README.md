@@ -23,6 +23,7 @@ does not modify items, inventory clicks, or server behavior.
 
 - Minecraft 26.1.2 + Fabric
 - Minecraft 26.2 + Fabric
+- Minecraft 26.3 + Fabric
 
 The mod requires Fabric Loader 0.19.3 or newer, Fabric Language Kotlin, and
 Java 25. It does not require Fabric API.
@@ -40,6 +41,7 @@ Production JARs are written to:
 ```text
 versions/mc26_1_2/build/libs/ScrollableTooltips-<mod_version>+mc26.1.2.jar
 versions/mc26_2/build/libs/ScrollableTooltips-<mod_version>+mc26.2.jar
+versions/mc26_3/build/libs/ScrollableTooltips-<mod_version>+mc26.3.jar
 ```
 
 The implementation is independent. Older tooltip-scrolling mods were consulted
