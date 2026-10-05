@@ -91,7 +91,10 @@ jobs:
           echo "MODRINTH_VERSIONS_FILE=$versions_file" >> "$GITHUB_ENV"
 
       - name: Build all Fabric targets
-        run: ./gradlew build --no-daemon
+        shell: bash
+        run: |
+          mapfile -t smoke_tasks < <(jq --raw-output '.targets[].project | ":versions:" + . + ":runSmoke"' "$RELEASE_MANIFEST")
+          ./gradlew build "${smoke_tasks[@]}" --no-daemon
 
       - name: Publish missing Modrinth versions
         shell: bash

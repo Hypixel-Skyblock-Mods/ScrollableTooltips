@@ -47,3 +47,5 @@ versions/mc26_3/build/libs/ScrollableTooltips-<mod_version>+mc26.3.jar
 The implementation is independent. Older tooltip-scrolling mods were consulted
 only to understand expected user-facing behavior; no source or assets were
 copied.
+
+Development smoke tasks (:versions:<target>:runSmoke) apply every production mixin through Fabric without game startup or login. Release CI runs these checks for every catalog target.

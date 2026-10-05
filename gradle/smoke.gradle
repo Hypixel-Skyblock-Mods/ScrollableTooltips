@@ -1,0 +1,30 @@
+sourceSets.test.java.srcDir(rootProject.file('src/test/java'))
+def smoke = sourceSets.create('smoke') {
+    java.setSrcDirs([rootProject.file('src/smoke/java')])
+    resources.setSrcDirs([rootProject.file('src/smoke/resources')])
+    compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    runtimeClasspath += sourceSets.main.runtimeClasspath
+}
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
+    testImplementation 'org.ow2.asm:asm-tree:9.10.1'
+    smokeImplementation 'org.ow2.asm:asm-tree:9.10.1'
+}
+tasks.withType(Test).configureEach { useJUnitPlatform() }
+loom {
+    fabricModJsonPath = rootProject.file('src/main/resources/fabric.mod.json')
+    mods {
+        register('scrollabletooltips') { sourceSet(sourceSets.main) }
+        register('scrollabletooltips_smoke') { sourceSet(smoke) }
+    }
+    runs {
+        register('smoke') {
+            client()
+            source(smoke)
+            runDir('run/smoke')
+            ideConfigGenerated(false)
+            vmArg('-Dscrollabletooltips.smoke=true')
+        }
+    }
+}

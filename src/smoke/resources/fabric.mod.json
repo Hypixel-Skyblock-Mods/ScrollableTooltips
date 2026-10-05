@@ -1,0 +1,15 @@
+{
+  "id": "scrollabletooltips_smoke",
+  "depends": {
+    "scrollabletooltips": "*"
+  },
+  "schemaVersion": 1,
+  "name": "Scrollable Tooltips development mixin checks",
+  "environment": "client",
+  "version": "1.0.0",
+  "entrypoints": {
+    "preLaunch": [
+      "org.hypixelskyblockmods.scrollabletooltips.smoke.FabricSmoke"
+    ]
+  }
+}
