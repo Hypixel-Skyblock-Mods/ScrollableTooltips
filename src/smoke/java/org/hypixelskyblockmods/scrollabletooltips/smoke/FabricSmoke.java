@@ -20,7 +20,7 @@ public final class FabricSmoke implements PreLaunchEntrypoint {
             var input = loader.getResourceAsStream("scrollabletooltips.mixins.json");
             var config = JsonParser.parseString(new String(input.readAllBytes(), StandardCharsets.UTF_8)).getAsJsonObject();
             var entries = config.getAsJsonArray("client");
-            
+
             for (var entry : entries) {
                 var name = config.get("package").getAsString().replace('.', '/') + "/" + entry.getAsString().replace('.', '/');
                 var node = new ClassNode();
